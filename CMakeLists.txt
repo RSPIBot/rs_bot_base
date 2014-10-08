@@ -85,7 +85,12 @@ catkin_package(
 #  CATKIN_DEPENDS roscpp rospy std_msgs
 #  DEPENDS system_lib
 )
-catkin_install_python(PROGRAMS rs_bot_base.py DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION})
+catkin_install_python(PROGRAMS 
+	rs_bot_base.py
+	MotorClass.py
+	Adafruit_PWM_Servo_Driver.py
+	Adafruit_I2C.py
+	DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION})
 ###########
 ## Build ##
 ###########
