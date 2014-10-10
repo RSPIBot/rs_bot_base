@@ -1,4 +1,4 @@
-#!/usr/bin/python
+!/usr/bin/python
 
 from MotorClass import MotorClass
 import time
@@ -20,9 +20,9 @@ def callback(data):
     if (data.linear.x > 255):
 	data.linear.x = 255
     motor.set_motor_speed(0, int(data.linear.x))
-    motor.set_motor_speed(1, int(data.linear.x))
-    motor.set_motor_speed(2, int(data.linear.x))
-    motor.set_motor_speed(3, int(data.linear.x))
+    #motor.set_motor_speed(1, int(data.linear.x))
+    #motor.set_motor_speed(2, int(data.linear.x))
+    #motor.set_motor_speed(3, int(data.linear.x))
     motor.change_motor_speed()
 
 def listener():
