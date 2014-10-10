@@ -1,4 +1,4 @@
-!/usr/bin/python
+#!/usr/bin/python
 
 from MotorClass import MotorClass
 import time
