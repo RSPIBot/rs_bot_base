@@ -17,8 +17,8 @@ def callback(data):
     rospy.loginfo(rospy.get_name() + " angular.x %d angular.y %d angular.z %d", data.angular.x, data.angular.y,
                   data.angular.z)
 
-    if (data.linear.x > 255):
-	data.linear.x = 255
+    if (data.linear.x > 254):
+	data.linear.x = 254
     motor.set_motor_speed(0, int(data.linear.x))
     motor.set_motor_speed(1, int(data.linear.x))
     motor.set_motor_speed(2, int(data.linear.x))
