@@ -58,7 +58,7 @@ class MotorClass:
     def stop_motor(self):
         self.m_pwm.setPWMFreq(60)
         i = 0
-        while i < self.motors:
+        while i < self.m_motors:
             self.m_pwm.setPWM(((i * 2) - 2), 0, self.m_motorOff)
             self.m_pwm.setPWM(((i * 2) - 1), 0, self.m_motorOff)
 
