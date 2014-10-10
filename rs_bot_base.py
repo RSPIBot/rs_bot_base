@@ -18,6 +18,7 @@ def callback(data):
                   data.angular.z)
     motor.set_motor_speed(1, 250)
     motor.change_motor_speed()
+    motor.stop_motor()
 
 def listener():
     rospy.Subscriber("cmd_vel", Twist, callback)
