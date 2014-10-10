@@ -16,9 +16,11 @@ def callback(data):
                   data.linear.z)
     rospy.loginfo(rospy.get_name() + " angular.x %d angular.y %d angular.z %d", data.angular.x, data.angular.y,
                   data.angular.z)
-    motor.set_motor_speed(1, 250)
+    motor.set_motor_speed(0, data.linear.x)
+    motor.set_motor_speed(1, data.linear.x)
+    motor.set_motor_speed(2, data.linear.x)
+    motor.set_motor_speed(3, data.linear.x)
     motor.change_motor_speed()
-    motor.stop_motor()
 
 def listener():
     rospy.Subscriber("cmd_vel", Twist, callback)
