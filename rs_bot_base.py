@@ -16,7 +16,7 @@ def callback(data):
                   data.linear.z)
     rospy.loginfo(rospy.get_name() + " angular.x %d angular.y %d angular.z %d", data.angular.x, data.angular.y,
                   data.angular.z)
-    motor.set_motor_speed(1, 4000)
+    motor.set_motor_speed(1, 250)
     motor.change_motor_speed()
 
 def listener():
