@@ -12,7 +12,7 @@ class MotorClass:
     def __init__(self):
         pass
 
-    m_pwm = PWM(0x40, debug=True)
+    m_pwm = PWM(0x40, debug=False)
     m_motors = 4
 
     m_motorAddress = [0, 1], [2, 3], [4, 5], [6, 7]
