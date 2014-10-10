@@ -19,7 +19,7 @@ def callback(data):
 
     if (data.linear.x > 255):
 	data.linear.x = 255
-    motor.set_motor_speed(0, 100)
+    motor.set_motor_speed(1, 100)
     #motor.set_motor_speed(1, int(data.linear.x))
     #motor.set_motor_speed(2, int(data.linear.x))
     #motor.set_motor_speed(3, int(data.linear.x))
