@@ -9,7 +9,7 @@ import rospy
 
 from geometry_msgs.msg import Twist
 
-motor = MotorClass
+motor = MotorClass()
 
 def callback(data):
     rospy.loginfo(rospy.get_name() + " linear.x %d linear.y %d linear.z %d", data.linear.x, data.linear.y,
