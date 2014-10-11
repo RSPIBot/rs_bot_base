@@ -46,21 +46,21 @@ class MotorClass:
             # move forward
             if self.m_motorSpeed[i] >= 0:
                 print "drive forward with speed %d" % self.m_motorSpeed[i]
-                self.m_pwm.setPWM(((i * 2) - 2), 0, (self.m_motorMaxSpeed / 255) * self.m_motorSpeed[i])
-                self.m_pwm.setPWM(((i * 2) - 1), 0, self.m_motorOff)
+                self.m_pwm.setPWM((i * 2), 0, (self.m_motorMaxSpeed / 255) * self.m_motorSpeed[i])
+                self.m_pwm.setPWM(((i * 2) + 1), 0, self.m_motorOff)
             else:
                 # move back
                 print "drive back with speed %d" % self.m_motorSpeed[i]
-                self.m_pwm.setPWM(((i * 2) - 1), 0, (self.m_motorMaxSpeed / 255) * (self.m_motorSpeed[i] * (-1)))
-                self.m_pwm.setPWM(((i * 2) - 2), 0, self.m_motorOff)
+                self.m_pwm.setPWM(((i * 2) + 1), 0, (self.m_motorMaxSpeed / 255) * (self.m_motorSpeed[i] * (-1)))
+                self.m_pwm.setPWM((i * 2), 0, self.m_motorOff)
             i += 1
 
     def stop_motor(self):
         self.m_pwm.setPWMFreq(60)
         i = 0
         while i < self.m_motors:
-            self.m_pwm.setPWM(((i * 2) - 2), 0, self.m_motorOff)
-            self.m_pwm.setPWM(((i * 2) - 1), 0, self.m_motorOff)
+            self.m_pwm.setPWM((i * 2), 0, self.m_motorOff)
+            self.m_pwm.setPWM(((i * 2) + 1), 0, self.m_motorOff)
 
             # m_pwm.setPWMFreq(60)                        # Set frequency to 60 Hz
             # while(True):
