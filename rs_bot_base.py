@@ -32,8 +32,8 @@ def callback(data):
         left -= data.angular.z
 	
     motor.set_motor_speed(0, int(right))
-    motor.set_motor_speed(1, int(right))
-    motor.set_motor_speed(2, int(left))
+    motor.set_motor_speed(1, int(left))
+    motor.set_motor_speed(2, int(right))
     motor.set_motor_speed(3, int(left))
     motor.change_motor_speed()
 
