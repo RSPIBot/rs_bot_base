@@ -20,12 +20,12 @@ def callback(data):
     if (data.linear.x > 254):
 		data.linear.x = 254
     if (data.linear.x < -254):
-		data.linear.x = -254
-		
+		data.linear.x = (-254)
+
 	if (data.angular.z > 254):
 		data.angular.z = 254
     if (data.angular.z < -254):
-		data.angular.z = -254
+		data.angular.z = (-254)
 		
 	right = data.linear.x
 	if (data.angular.z < 0)
