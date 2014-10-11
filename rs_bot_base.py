@@ -28,10 +28,10 @@ def callback(data):
 		data.angular.z = (-254)
 		
 	right = data.linear.x
-	if (data.angular.z < 0)
+	if (data.angular.z < 0):
 		right - data.angular.z
 	left = data.linear.x
-	if (data.angular.z > 0)
+	if (data.angular.z > 0):
 		left - data.angular.z
 	
     motor.set_motor_speed(0, int(right))
