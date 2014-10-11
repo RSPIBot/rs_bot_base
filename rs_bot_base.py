@@ -12,10 +12,7 @@ from geometry_msgs.msg import Twist
 motor = MotorClass()
 
 def callback(data):
-    rospy.loginfo(rospy.get_name() + " linear.x %d linear.y %d linear.z %d", data.linear.x, data.linear.y,
-                  data.linear.z)
-    rospy.loginfo(rospy.get_name() + " angular.x %d angular.y %d angular.z %d", data.angular.x, data.angular.y,
-                  data.angular.z)
+    rospy.loginfo(rospy.get_name() + " linear.x %d and angular.z %d", data.linear.x, data.angular.z)
 
     if (data.linear.x > 254):
         data.linear.x = 254
@@ -29,10 +26,10 @@ def callback(data):
 		
     right = data.linear.x
     if (data.angular.z < 0):
-        right - data.angular.z
+        right -= data.angular.z
     left = data.linear.x
     if (data.angular.z > 0):
-        left - data.angular.z
+        left -= data.angular.z
 	
     motor.set_motor_speed(0, int(right))
     motor.set_motor_speed(1, int(right))
