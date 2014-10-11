@@ -30,7 +30,7 @@ def callback(data):
     right = data.linear.x
     if (data.angular.z < 0):
         right - data.angular.z
-        left = data.linear.x
+    left = data.linear.x
     if (data.angular.z > 0):
         left - data.angular.z
 	
