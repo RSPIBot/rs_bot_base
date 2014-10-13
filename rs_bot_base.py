@@ -29,9 +29,11 @@ def callback(data):
     if (data.angular.z < 0):
         right = (data.angular.z*(-1))
         left = (data.angular.z)
+        rospy.loginfo( "turn right left: %d and right: %d", left, right)
     if (data.angular.z > 0):
         left = data.angular.z
         right = (data.angular.z*(-1))
+        rospy.loginfo( "turn left left: %d and right: %d", left, right)
 	
     motor.set_motor_speed(0, int(left))
     motor.set_motor_speed(1, int(right))
