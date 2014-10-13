@@ -26,15 +26,17 @@ def callback(data):
 		
     right = data.linear.x
     if (data.angular.z < 0):
-        right -= data.angular.z
+        right = (data.angular.z*(-1))
+        left = 0
     left = data.linear.x
     if (data.angular.z > 0):
-        left -= data.angular.z
+        left = data.angular.z
+        right = 0
 	
-    motor.set_motor_speed(0, int(right))
-    motor.set_motor_speed(1, int(left))
-    motor.set_motor_speed(2, int(right))
-    motor.set_motor_speed(3, int(left))
+    motor.set_motor_speed(0, int(left))
+    motor.set_motor_speed(1, int(right))
+    motor.set_motor_speed(2, int(left))
+    motor.set_motor_speed(3, int(right))
     motor.change_motor_speed()
 
 def listener():
