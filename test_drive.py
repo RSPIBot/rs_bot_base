@@ -43,7 +43,7 @@ def listener():
     rospy.spin()
 
 if __name__ == "__main__":
-    rospy.init_node('rs_bot_base')
+    rospy.init_node('rs_bot_base_test')
     rospy.loginfo("motor starting")
     i = 0
     while True:
