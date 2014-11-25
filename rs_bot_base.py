@@ -24,12 +24,14 @@ def callback(data):
         data.angular.z = (-1.0)
 
 	#scale the values back
-	data.linear.x = data.linear.x *  255.0
-    data.angular.z = data.angular.z * 255.0
-    rospy.loginfo(rospy.get_name() + " linear.x %f and angular.z %f", data.linear.x, data.angular.z)
-
     speed = data.linear.x
     turnAngle = data.angular.z
+
+	speed = speed *  255.0
+    turnAngle = turnAngle * 255.0
+    rospy.loginfo(rospy.get_name() + " linear.x %f and angular.z %f", speed, turnAngle)
+
+
     wheelDistence = 11.0
     correction = 1.0
     #right = data.linear.x
