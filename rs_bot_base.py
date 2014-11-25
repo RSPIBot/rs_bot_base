@@ -12,7 +12,7 @@ from geometry_msgs.msg import Twist
 motor = MotorClass()
 
 def callback(data):
-    rospy.loginfo(rospy.get_name() + " linear.x %d and angular.z %d", data.linear.x, data.angular.z)
+    rospy.loginfo(rospy.get_name() + " linear.x %f and angular.z %f", data.linear.x, data.angular.z)
 
     #limit the values between -1 and 1 to have simular results as the turtlebot
     if (data.linear.x > 1.0):
@@ -26,13 +26,13 @@ def callback(data):
         data.angular.z = (-1.0)
 
 	#scale the values back
-	data.linear.x *= 255
-    data.angular.z *= 255
+	data.linear.x =data.linear.x *  255.0
+    data.angular.z = data.angular.z * 255.0
 
     speed = data.linear.x
     turnAngle = data.angular.z
-    wheelDistence = 11
-    correction = 1
+    wheelDistence = 11.0
+    correction = 1.0
     #right = data.linear.x
     #left = data.linear.x
     #if (data.angular.z < 0):
@@ -44,8 +44,8 @@ def callback(data):
     #    right = (data.angular.z*(-1))
     #    rospy.loginfo( "turn left left: %d and right: %d", left, right)
 
-    right = speed + (2/wheelDistence)*(turnAngle) * correction
-    left = speed + (2/wheelDistence)*(turnAngle) * correction
+    right = speed + (2.0/wheelDistence)*(turnAngle) * correction
+    left = speed + (2.0/wheelDistence)*(turnAngle) * correction
 
     motor.set_motor_speed(0, int(left))
     motor.set_motor_speed(1, int(right))
