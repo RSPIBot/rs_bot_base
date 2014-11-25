@@ -43,8 +43,8 @@ def callback(data):
     #    right = (data.angular.z*(-1))
     #    rospy.loginfo( "turn left left: %d and right: %d", left, right)
 
-    right = speed + (2.0/wheelDistence)*(turnAngle) * correction
-    left = speed - (2.0/wheelDistence)*(turnAngle) * correction
+    right = speed - (2.0/wheelDistence)*(turnAngle) * correction
+    left = speed + (2.0/wheelDistence)*(turnAngle) * correction
 
     if (right > 255.0):
         right = 255.0
