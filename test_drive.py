@@ -72,5 +72,6 @@ if __name__ == "__main__":
         motor.set_motor_speed(1, int(right))
         motor.set_motor_speed(2, int(left))
         motor.set_motor_speed(3, int(right))
+        motor.change_motor_speed()
         time.sleep(5)
     #listener()
