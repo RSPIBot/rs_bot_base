@@ -31,7 +31,7 @@ def callback(data):
 
 
     wheelDistence = 11.0
-    correction = 5.0
+    correction = 2.0
     #right = data.linear.x
     #left = data.linear.x
     #if (data.angular.z < 0):
