@@ -46,6 +46,16 @@ def callback(data):
     right = speed + (2.0/wheelDistence)*(turnAngle) * correction
     left = speed - (2.0/wheelDistence)*(turnAngle) * correction
 
+    if (right > 255.0):
+        right = 255.0
+    if (right < -255.0):
+        right = (-255.0)
+
+    if (left > 255.0):
+        left = 255.0
+    if (left < -255.0):
+        left = (-255.0)
+        
     motor.set_motor_speed(0, int(left))
     motor.set_motor_speed(1, int(right))
     motor.set_motor_speed(2, int(left))
