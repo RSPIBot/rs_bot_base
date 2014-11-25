@@ -15,15 +15,15 @@ def callback(data):
     rospy.loginfo(rospy.get_name() + " linear.x %d and angular.z %d", data.linear.x, data.angular.z)
 
     #limit the values between -1 and 1 to have simular results as the turtlebot
-    if (data.linear.x > 1):
-        data.linear.x = 1
-    if (data.linear.x < -1):
-        data.linear.x = (-1)
+    if (data.linear.x > 1.0):
+        data.linear.x = 1.0
+    if (data.linear.x < -1.0):
+        data.linear.x = (-1.0)
 
-    if (data.angular.z > 1):
-        data.angular.z = 1
-    if (data.angular.z < -1):
-        data.angular.z = (-1)
+    if (data.angular.z > 1.0):
+        data.angular.z = 1.0
+    if (data.angular.z < -1.0):
+        data.angular.z = (-1.0)
 
 	#scale the values back
 	data.linear.x *= 255
