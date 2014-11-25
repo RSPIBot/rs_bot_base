@@ -51,6 +51,7 @@ def callback(data):
     motor.set_motor_speed(2, int(left))
     motor.set_motor_speed(3, int(right))
     motor.change_motor_speed()
+    rospy.loginfo(rospy.get_name() + " right speed %f left speed %f", right, left)
 
 def listener():
     rospy.Subscriber("cmd_vel", Twist, callback)
