@@ -44,8 +44,10 @@ def listener():
 
 if __name__ == "__main__":
     rospy.init_node('rs_bot_base')
+    rospy.loginfo("motor starting")
     i = 0
     while True:
+        rospy.loginfo("while true")
         if (i == 0):
             i = 1
             left = 100
