@@ -45,8 +45,8 @@ def listener():
 if __name__ == "__main__":
     rospy.init_node('rs_bot_base_test')
     rospy.loginfo("unplug usb")
-	time.sleep(10)
-	rospy.loginfo("motor starting")
+    time.sleep(10)
+    rospy.loginfo("motor starting")
     i = 0
     while True:
         rospy.loginfo("while true")
