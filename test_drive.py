@@ -60,16 +60,16 @@ if __name__ == "__main__":
             right = 100
         elif(i == 1):
             i = 2
-            left = 100
-            right = 100
+            left = -100
+            right = -100
         elif(i == 2):
             i = 3
-            left = 50
+            left = 100
             right = 0
         elif(i == 3):
             i = 0
             left = 0
-            right = 50
+            right = 100
         motor.set_motor_speed(0, int(left))
         motor.set_motor_speed(1, int(right))
         motor.set_motor_speed(2, int(left))
